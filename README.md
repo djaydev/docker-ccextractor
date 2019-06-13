@@ -1,8 +1,8 @@
 # ccextractor
 
-Used as a base image to build and install into other docker images.
-Can also be used as-is
-Built on ubuntu
+- Used as a base image to build and install into other docker images.
+- Can also be used as-is
+- Built on ubuntu
 
 To install ccextractor in a docker image:
 ```
