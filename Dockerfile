@@ -5,7 +5,7 @@ FROM ubuntu AS builder
 
 # install dependencies
 RUN apt update
-RUN apt install build-essential git pkgconf libtesseract-dev libfreetype6 unzip libc6 libleptonica-dev libcurl4-gnutls-dev libglfw3-dev libglew-dev libwebp-dev libgif-dev software-properties-common wget -y
+RUN apt install build-essential pkgconf libtesseract-dev libfreetype6 unzip libc6 libleptonica-dev libcurl4-gnutls-dev libglfw3-dev libglew-dev libwebp-dev libgif-dev software-properties-common wget -y
 
 # compile ccextractor
 RUN wget -O master.zip https://codeload.github.com/CCExtractor/ccextractor/zip/master && \
