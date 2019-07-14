@@ -9,10 +9,10 @@ RUN apt install build-essential pkgconf libtesseract-dev libfreetype6 unzip libc
 
 # compile ccextractor
 RUN wget -O master.zip https://codeload.github.com/CCExtractor/ccextractor/zip/master && \
-		unzip master.zip 'ccextractor-master/linux/*' -d /opt/ && \
-		unzip master.zip 'ccextractor-master/src/*' -d /opt/ && \
-		cd /opt/ccextractor-master/linux/ && \
-		./build
+    unzip master.zip 'ccextractor-master/linux/*' -d /opt/ && \
+    unzip master.zip 'ccextractor-master/src/*' -d /opt/ && \
+    cd /opt/ccextractor-master/linux/ && \
+    ./build
 
 # release stage
 FROM ubuntu
