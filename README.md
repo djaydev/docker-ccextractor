@@ -5,6 +5,6 @@
 - Built on ubuntu
 
 To install ccextractor in a docker image:
-```
-COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
+
+```COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 ```
