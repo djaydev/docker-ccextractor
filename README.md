@@ -6,5 +6,6 @@
 
 To install ccextractor in a docker image:
 
-```COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
+```shell
+COPY --from=djaydev/ccextractor:latest /usr/local/bin /usr/local/bin
 ```
