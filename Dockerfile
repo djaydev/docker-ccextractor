@@ -5,7 +5,8 @@ FROM ubuntu:18.04 AS builder
 
 # install dependencies
 RUN apt update
-RUN apt install build-essential pkgconf cmake git automake autoconf libtesseract-dev libfreetype6 unzip libc6 tesseract-ocr-eng libleptonica-dev libcurl4-gnutls-dev libglfw3-dev libglew-dev libwebp-dev libgif-dev software-properties-common wget -y
+RUN apt install build-essential pkgconf cmake automake autoconf unzip wget git software-properties-common \
+    libtesseract-dev libfreetype6 tesseract-ocr-eng libleptonica-dev libcurl4-gnutls-dev libglfw3-dev libglew-dev libwebp-dev libgif-dev -y
 
 # compile ccextractor
 RUN wget -O master.zip https://codeload.github.com/CCExtractor/ccextractor/zip/master
