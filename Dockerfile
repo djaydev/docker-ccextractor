@@ -1,7 +1,7 @@
 # djaydev/ccextractor:latest
 
 # complication stage
-FROM ubuntu:18.04 AS builder
+FROM ubuntu:19.10 AS builder
 
 # install dependencies
 RUN apt update
@@ -16,7 +16,7 @@ RUN git clone https://github.com/CCExtractor/ccextractor.git && \
     make
 
 # release stage
-FROM ubuntu:18.04
+FROM ubuntu:19.10
 
 # install dependencies
 RUN apt update && \
