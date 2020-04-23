@@ -1,11 +1,11 @@
 # djaydev/ccextractor:latest
 
 # complication stage
-FROM ubuntu:19.10 AS builder
+FROM ubuntu:20.04 AS builder
 
 # install dependencies
 RUN apt update
-RUN apt install build-essential pkgconf cmake automake autoconf git software-properties-common \
+RUN DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends build-essential pkgconf cmake automake autoconf git software-properties-common \
     libtesseract-dev libfreetype6 tesseract-ocr-eng libleptonica-dev libcurl4-gnutls-dev libglfw3-dev libglew-dev libwebp-dev libgif-dev -y
 
 # compile ccextractor
@@ -16,7 +16,7 @@ RUN git clone https://github.com/CCExtractor/ccextractor.git && \
     make
 
 # release stage
-FROM ubuntu:19.10
+FROM ubuntu:20.04
 
 # install dependencies
 RUN apt update && \
