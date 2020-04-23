@@ -5,7 +5,7 @@ FROM ubuntu:20.04 AS builder
 
 # install dependencies
 RUN apt update
-RUN apt install build-essential pkgconf cmake automake autoconf git software-properties-common \
+RUN DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends build-essential pkgconf cmake automake autoconf git software-properties-common \
     libtesseract-dev libfreetype6 tesseract-ocr-eng libleptonica-dev libcurl4-gnutls-dev libglfw3-dev libglew-dev libwebp-dev libgif-dev -y
 
 # compile ccextractor
