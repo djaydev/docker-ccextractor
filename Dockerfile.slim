@@ -6,7 +6,7 @@ FROM alpine:3.12 AS builder
 # install dependencies
 RUN apk add pkgconf cmake automake autoconf \
     bash git build-base tesseract-ocr-dev \
-    utf8proc-dev libpng-dev freetype-dev -y
+    utf8proc-dev libpng-dev freetype-dev
 
 # compile ccextractor
 RUN git clone https://github.com/CCExtractor/ccextractor.git && \
@@ -19,15 +19,9 @@ RUN git clone https://github.com/CCExtractor/ccextractor.git && \
 FROM alpine:3.12
 
 # install dependencies
-RUN apt update && \
-    apt install libfreetype6 libutf8proc2 tesseract-ocr -y && \
+RUN apk add tesseract-ocr utf8proc libpng freetype && \
     # cleanup
-    apt-get autoremove -y && \
-    apt-get clean && \
-    rm -rf \
-    	/tmp/* \
-    	/var/lib/apt/lists/* \
-    	/var/tmp/*
+    rm -rf /var/cache/apk/* /tmp/* /tmp/.[!.]*
 
 # copy ccextractor from complication stage
 COPY --from=builder /ccextractor/linux/ccextractor /usr/local/bin
