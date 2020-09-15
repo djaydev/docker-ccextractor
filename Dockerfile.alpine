@@ -2,11 +2,11 @@ FROM alpine:edge
 
 WORKDIR /build
 
-COPY . .
+RUN apk add wget && wget --no-check-certificate https://raw.githubusercontent.com/gizmotronic/ccextractor/master/linux/build-static.sh
 
 RUN mkdir -p -m a+rwx /tmp/cc \
  && mkdir -p -m a+rwx ../lib/tessdata \
- && cp linux/build-static.sh /tmp/cc
+ && cp build-static.sh /tmp/cc
 
 WORKDIR /tmp/cc
 
